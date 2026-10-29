@@ -3121,12 +3121,13 @@ body[data-brand] .hero-shade {
 /* A welcoming parent brand, with its specializations grouped beneath it. */
 body .ecosystem-header,
 body .ecosystem-header.scrolled {
-  top: 16px;
-  left: 3%;
-  width: 94%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   min-height: 80px;
-  padding: 8px 24px;
-  border-radius: 12px;
+  padding: 8px var(--space);
+  border-radius: 0;
   background: #faf8f2;
   color: #2c3c48;
   box-shadow: 0 4px 22px #0000000d;
@@ -3197,9 +3198,9 @@ body .ecosystem-header.scrolled .desktop-nav {
 body[data-brand="consultoria"] .hero {
   display: flex;
   align-items: center;
-  padding: 140px 0 80px;
+  padding: 64px 0;
   height: 100svh;
-  min-height: 620px;
+  min-height: 100svh;
 }
 body[data-brand="consultoria"] .hero h1 {
   font-family: var(--sans);
@@ -3230,8 +3231,8 @@ body[data-brand="consultoria"] .hero-description {
 @media (max-width: 600px) {
   body .ecosystem-header,
   body .ecosystem-header.scrolled {
-    top: 10px;
-    padding: 6px 15px;
+    top: 0;
+    padding: 6px 20px;
     min-height: 72px;
   }
   body .ecosystem-header .brand,
@@ -3241,8 +3242,8 @@ body[data-brand="consultoria"] .hero-description {
     height: 58px;
   }
   body[data-brand="consultoria"] .hero {
-    min-height: 620px;
-    padding: 135px 0 80px;
+    min-height: 100svh;
+    padding: 64px 0;
     align-items: center;
   }
   body[data-brand="consultoria"] .hero h1 {
@@ -3253,8 +3254,8 @@ body[data-brand="consultoria"] .hero-description {
     max-width: 320px;
   }
   .ecosystem-header .mobile-nav {
-    top: calc(100% + 8px);
-    border-radius: 12px;
+    top: 100%;
+    border-radius: 0;
   }
 }
 /* Content leads; decorative numbering and colored rules are unnecessary. */
@@ -3294,4 +3295,25 @@ body[data-brand="consultoria"] .hero-description {
 }
 .journey-steps li {
   grid-template-columns: 1fr;
+}
+
+/* Leave the opening film unobstructed; reveal full-width navigation on scroll. */
+body[data-brand] .ecosystem-header:not(.scrolled) {
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+body[data-brand] .ecosystem-header.scrolled {
+  visibility: visible;
+  transform: translateY(0);
+}
+body[data-brand] .ecosystem-header {
+  transition:
+    transform 180ms ease,
+    visibility 180ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-brand] .ecosystem-header {
+    transition: none;
+  }
 }

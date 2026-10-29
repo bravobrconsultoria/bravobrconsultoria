@@ -37,14 +37,20 @@ document.addEventListener("keydown", (e) => {
   }
 });
 const hero = $(".hero");
-if (hero)
-  new IntersectionObserver(
-    ([entry]) => {
-      header.classList.toggle("scrolled", !entry.isIntersecting);
-      $(".whatsapp-float").hidden = entry.isIntersecting;
-    },
-    { rootMargin: "-90px 0px 0px 0px", threshold: 0 },
-  ).observe(hero);
+if (hero) {
+  const updateHeader = () => {
+    const visible = window.scrollY > 80;
+    header.classList.toggle("scrolled", visible);
+    header.inert = !visible;
+    if (!visible) {
+      closeMenu();
+      $(".specialties-menu")?.removeAttribute("open");
+    }
+    $(".whatsapp-float").hidden = !visible;
+  };
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+}
 const video = $(".hero-video");
 // Muted inline playback; the poster remains if browser policy blocks autoplay.
 if (video) {
