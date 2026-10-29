@@ -45,98 +45,25 @@ if (hero)
     },
     { rootMargin: "-90px 0px 0px 0px", threshold: 0 },
   ).observe(hero);
-const video = $(".hero-video"),
-  videoToggle = $(".video-toggle");
-let userPaused = false;
-let explicitPlayback = false;
-const desktopVideo = window.matchMedia("(min-width: 768px)");
-function playVideo() {
-  if (!video.getAttribute("src")) video.src = video.dataset.src;
-  video.muted = true;
-  video.play().catch(() => updateVideoButton());
-}
-function updateVideoButton() {
-  const label = video.paused ? "Reproduzir vídeo" : "Pausar vídeo";
-  videoToggle.textContent = label;
-  videoToggle.setAttribute("aria-label", label + " de fundo");
-}
-function initVideo() {
-  if (!video) return;
-  videoToggle.hidden = !desktopVideo.matches;
-  updateVideoButton();
-  const canAutoplay =
-    desktopVideo.matches &&
-    !reduced.matches &&
-    !navigator.connection?.saveData &&
-    !/2g/.test(navigator.connection?.effectiveType || "");
-  if (
-    canAutoplay &&
-    !userPaused &&
-    !document.hidden &&
-    hero.getBoundingClientRect().bottom > 0
-  )
-    playVideo();
-}
+const video = $(".hero-video");
+// Muted inline playback; the poster remains if browser policy blocks autoplay.
 if (video) {
-  if (document.readyState === "complete") initVideo();
-  else
-    window.addEventListener("load", () => setTimeout(initVideo, 450), {
-      once: true,
-    });
-  video.addEventListener("playing", () => {
-    video.classList.add("ready");
-    updateVideoButton();
-  });
-  video.addEventListener("pause", updateVideoButton);
-  video.addEventListener("error", () => {
-    video.classList.remove("ready");
-    videoToggle.hidden = true;
-  });
-  videoToggle.addEventListener("click", () => {
-    if (!video.paused) {
-      userPaused = true;
-      video.pause();
-    } else {
-      userPaused = false;
-      explicitPlayback = true;
-      video.classList.add("user-play");
-      playVideo();
-    }
-  });
-  new IntersectionObserver(([e]) => {
-    if (!e.isIntersecting) video.pause();
-    else if (
-      video.getAttribute("src") &&
-      desktopVideo.matches &&
-      !document.hidden &&
-      !userPaused &&
-      (!reduced.matches || explicitPlayback)
-    )
-      playVideo();
+  const play = () => {
+    if (document.hidden || hero.getBoundingClientRect().bottom <= 0) return;
+    video.muted = true;
+    if (!video.getAttribute("src")) video.src = video.dataset.src;
+    video.play().catch(() => {});
+  };
+  video.addEventListener("playing", () => video.classList.add("ready"));
+  video.addEventListener("error", () => video.classList.remove("ready"));
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) play();
+    else video.pause();
   }).observe(hero);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) video.pause();
-    else if (
-      !userPaused &&
-      (!reduced.matches || explicitPlayback) &&
-      desktopVideo.matches &&
-      hero.getBoundingClientRect().bottom > 0 &&
-      video.getAttribute("src")
-    )
-      playVideo();
-  });
-  reduced.addEventListener("change", () => {
-    if (reduced.matches) {
-      video.pause();
-      explicitPlayback = false;
-      video.classList.remove("user-play");
-    }
-    initVideo();
-  });
-  desktopVideo.addEventListener("change", () => {
-    if (!desktopVideo.matches) video.pause();
-    initVideo();
-  });
+  document.addEventListener("visibilitychange", () =>
+    document.hidden ? video.pause() : play(),
+  );
+  play();
 }
 const topics = {
   Oferta:
