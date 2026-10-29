@@ -255,8 +255,7 @@ function showCase(n) {
   $$("[data-case-go]").forEach((b) =>
     b.setAttribute("aria-pressed", String(Number(b.dataset.caseGo) === caseId)),
   );
-  $(".case-status").textContent =
-    `${caseData[caseId].name} · ${caseIndex + 1} de ${caseSlides.length}`;
+  $(".case-status").textContent = caseData[caseId].name;
 }
 function selectCase(id) {
   const index = caseSlides.findIndex(
@@ -275,7 +274,9 @@ $("[data-case-next]")?.addEventListener("click", () => showCase(caseIndex + 1));
 function showReview(n) {
   reviewIndex = (n + reviews.length) % reviews.length;
   reviews.forEach((s, i) => (s.hidden = i !== reviewIndex));
-  $(".review-status").textContent = `0${reviewIndex + 1} / 03`;
+  $(".review-status").textContent = reviews[reviewIndex]
+    .querySelector("figcaption b")
+    .textContent.trim();
 }
 $("[data-review-prev]")?.addEventListener("click", () =>
   showReview(reviewIndex - 1),

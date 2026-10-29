@@ -17,7 +17,7 @@ Revisão final em 30/09/2026. Prévia local em `http://127.0.0.1:4173`, navegado
 - Desktop: entradas da Consultoria e Empresarial, navegação entre marcas, cartões das especializações e cases. Tablet: cartões das especializações a 768 px, jornada comercial a 768 e 1024 px, cardápio Foods a 1024 px. Mobile: páginas a 320 px e navegação a 390 px. Nenhum transbordamento horizontal de página observado nesses testes.
 - Menu móvel abre as três experiências e fecha após navegação. Tabs de soluções aceitam teclado, incluindo End. Método mantém seus controles e painéis associados.
 - Carrossel Empresarial alterna entre os IDs corretos, abre detalhes da WS Rocha e permite fechar por Escape. Foods abre o case Rosendo/Jambalaya, sem controles de carrossel desnecessários para um único destaque. Controles e logos de clientes apontam apenas para cases presentes em cada página.
-- Vídeos locais da Consultoria e Empresarial reproduzidos e pausados pelo controle, com readyState 4. O navegador está com movimento reduzido ativo: o poster permanece por padrão e a reprodução requer escolha explícita.
+- Atualização de 29/10: vídeo de abertura com autoplay mudo, sem botão de reprodução, cores naturais e preenchimento de tela. Reprodução automática confirmada no navegador em 1366 × 768 e 390 × 844.
 - Versões sem áudio: Consultoria 1.121.425 bytes; Empresarial 1.115.956 bytes; Foods 1.307.534 bytes. Fontes WOFF2 locais compartilhadas.
 - WhatsApp usa mensagem específica da página de origem. E-mail e Instagram estão atualizados. Nenhuma mensagem foi enviada durante a validação.
 - Depoimentos mantêm os textos originais e contexto histórico. PDF institucional permanece indisponível de forma explícita. Não foram adicionados resultados ou avaliações numéricas.
@@ -25,8 +25,12 @@ Revisão final em 30/09/2026. Prévia local em `http://127.0.0.1:4173`, navegado
 
 ## Limites
 
-Os tamanhos foram emulados; não houve teste em aparelhos físicos, Safari ou leitor de tela. O gesto de swipe não foi validado em hardware touch; os botões continuam sendo alternativa acessível. A política de autoplay normal e economia de dados foi revisada no código, enquanto poster e reprodução explícita foram verificados no navegador com movimento reduzido.
+Os tamanhos foram emulados; não houve teste em aparelhos físicos, Safari ou leitor de tela. O gesto de swipe não foi validado em hardware touch; os botões continuam sendo alternativa acessível. A abertura agora tenta autoplay mudo em todos os tamanhos, conforme solicitado; o poster permanece se o navegador impedir a reprodução. Animações de interface continuam respeitando movimento reduzido.
 
 Não foram atribuídas notas Lighthouse nem métricas reais de Core Web Vitals. Hospedagem, DNS, TLS e regras de produção precisam ser configurados no provedor; o push ao GitHub não publica automaticamente o domínio. As regras Apache estão preparadas em `.htaccess`, mas não foram executadas em um servidor Apache nesta revisão.
 
 A revisão visual final está salva localmente em `.qa/consultoria-final.png`, ignorada no Git.
+
+## Ajuste de direção visual — 29/10
+
+Abertura principal com menos texto, menu único da Consultoria com Foods e Empresarial agrupadas em Especializações. Removidas numerações decorativas, contagens visuais dos carrosséis e traços vermelhos. Indicadores dos cases usam pontos com nomes acessíveis. Verificados menu desktop, menu mobile, estrutura, links locais e ausência de overflow na abertura.

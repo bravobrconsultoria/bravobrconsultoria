@@ -460,7 +460,7 @@ svg {
   max-width: 490px;
 }
 .strong-line {
-  border-left: 3px solid var(--red);
+  border-left: 0;
   padding-left: 20px;
   font-weight: 700;
   margin-top: 30px;
@@ -682,7 +682,7 @@ svg {
 }
 .method-tabs button[aria-selected="true"] {
   color: white;
-  border-bottom-color: #ed6e5c;
+  border-bottom-color: #fff;
 }
 .method-tabs button[aria-selected="true"] > i {
   opacity: 1;
@@ -751,7 +751,7 @@ svg {
   white-space: nowrap;
 }
 .solution-tabs button[aria-selected="true"] {
-  border-bottom-color: var(--red);
+  border-bottom-color: var(--ink);
   color: #ac2818;
   font-weight: 700;
 }
@@ -986,7 +986,7 @@ svg {
   color: #aeb7bc;
 }
 .marketing-head h2:last-child {
-  border-left: 3px solid var(--red);
+  border-left: 0;
   padding-left: 40px;
 }
 .marketing-head em {
@@ -2674,7 +2674,7 @@ dialog::backdrop {
   border-bottom: 2px solid transparent;
 }
 .ecosystem-nav a[aria-current] {
-  border-color: var(--red);
+  border-color: var(--ink);
 }
 .ecosystem-header .desktop-nav {
   margin: 0;
@@ -3202,7 +3202,7 @@ body[data-brand="consultoria"] .hero {
   min-height: 620px;
 }
 body[data-brand="consultoria"] .hero h1 {
-  font-family: var(--body);
+  font-family: var(--sans);
   font-size: clamp(46px, 5.5vw, 80px);
   font-weight: 600;
   letter-spacing: -0.045em;
@@ -3256,4 +3256,42 @@ body[data-brand="consultoria"] .hero-description {
     top: calc(100% + 8px);
     border-radius: 12px;
   }
+}
+/* Content leads; decorative numbering and colored rules are unnecessary. */
+.eyebrow:before,
+.hero h1 span:after,
+.desktop-nav a:after {
+  content: none;
+  display: none;
+}
+.eyebrow {
+  gap: 0;
+}
+.method-tabs button[aria-selected="true"] {
+  border-bottom-color: #fff;
+}
+.method-tabs button[aria-selected="true"] > i {
+  color: #fff;
+}
+.service-tabs button[aria-selected="true"] {
+  border-bottom-color: var(--ink);
+}
+.case-picker button {
+  width: 44px;
+  justify-content: center;
+}
+.case-picker button i,
+.case-picker button[aria-pressed="true"] i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #aaa69d;
+}
+.case-picker button[aria-pressed="true"] i {
+  background: var(--ink);
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+.journey-steps li {
+  grid-template-columns: 1fr;
 }
