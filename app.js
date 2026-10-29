@@ -41,7 +41,6 @@ if (hero) {
   const updateHeader = () => {
     const visible = window.scrollY > 80;
     header.classList.toggle("scrolled", visible);
-    header.inert = !visible;
     if (!visible) {
       closeMenu();
       $(".specialties-menu")?.removeAttribute("open");

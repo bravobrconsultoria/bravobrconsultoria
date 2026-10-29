@@ -3297,20 +3297,25 @@ body[data-brand="consultoria"] .hero-description {
   grid-template-columns: 1fr;
 }
 
-/* Leave the opening film unobstructed; reveal full-width navigation on scroll. */
+/* Navigation overlays the film, then becomes a solid fixed header. */
+body[data-brand] .ecosystem-header {
+  visibility: visible;
+  transform: none;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
 body[data-brand] .ecosystem-header:not(.scrolled) {
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(-100%);
+  background: transparent;
+  box-shadow: none;
+  color: white;
 }
 body[data-brand] .ecosystem-header.scrolled {
-  visibility: visible;
-  transform: translateY(0);
+  background: white;
+  color: var(--ink);
 }
-body[data-brand] .ecosystem-header {
-  transition:
-    transform 180ms ease,
-    visibility 180ms;
+.ecosystem-header .specialties-menu > div {
+  color: var(--ink);
 }
 @media (prefers-reduced-motion: reduce) {
   body[data-brand] .ecosystem-header {
