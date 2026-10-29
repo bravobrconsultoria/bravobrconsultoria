@@ -1155,8 +1155,8 @@ svg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, #152029f5, #15202955),
-    linear-gradient(0deg, #152029ef, transparent 60%);
+    linear-gradient(90deg, #000000b3, #00000026),
+    linear-gradient(0deg, #00000099, transparent 60%);
   z-index: -1;
 }
 .operation h2 {
@@ -1190,9 +1190,7 @@ svg {
   gap: 14px 30px;
 }
 .operation-bottom li:before {
-  content: "—";
-  color: #f48672;
-  margin-right: 9px;
+  content: none;
 }
 .client-brands {
   padding: 60px 0 45px;
@@ -3354,4 +3352,26 @@ body[data-brand] .footer-brand .brand {
     font-size: 17px;
     max-width: 300px;
   }
+}
+
+/* Preserve each specialization's supplied identity. */
+body[data-brand="foods"] .ecosystem-header .brand {
+  width: 80px;
+}
+body[data-brand="empresarial"] .ecosystem-header .brand {
+  width: 200px;
+}
+body[data-brand="empresarial"] .ecosystem-header.scrolled .brand,
+body[data-brand="empresarial"] .footer-brand .brand {
+  background: #202020;
+  padding: 8px;
+}
+body[data-brand="empresarial"] .footer-brand .brand {
+  width: 230px;
+}
+.operation {
+  background: #201e1b;
+}
+.operation-bottom p {
+  color: #f1eee8;
 }
