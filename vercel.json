@@ -1,0 +1,29 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" },
+    { "src": "app.js", "use": "@vercel/static" },
+    { "src": "robots.txt", "use": "@vercel/static" },
+    { "src": "sitemap.xml", "use": "@vercel/static" },
+    { "src": "assets/web/**", "use": "@vercel/static" },
+    { "src": "assets/fonts/*.woff2", "use": "@vercel/static" },
+    { "src": "assets/fonts/OFL-*.txt", "use": "@vercel/static" },
+    { "src": "assets/foods/videos/hero-web.mp4", "use": "@vercel/static" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/foods.html", "destination": "/foods", "permanent": true },
+    {
+      "source": "/empresarial.html",
+      "destination": "/empresarial",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/foods", "destination": "/foods.html" },
+    { "source": "/empresarial", "destination": "/empresarial.html" }
+  ]
+}
