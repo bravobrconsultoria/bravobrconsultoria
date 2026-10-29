@@ -3118,3 +3118,142 @@ body[data-brand] .hero-shade {
     linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.12) 80%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.25), transparent 50%);
 }
+/* A welcoming parent brand, with its specializations grouped beneath it. */
+body .ecosystem-header,
+body .ecosystem-header.scrolled {
+  top: 16px;
+  left: 3%;
+  width: 94%;
+  min-height: 80px;
+  padding: 8px 24px;
+  border-radius: 12px;
+  background: #faf8f2;
+  color: #2c3c48;
+  box-shadow: 0 4px 22px #0000000d;
+}
+body .ecosystem-header .brand,
+body .ecosystem-header.scrolled .brand {
+  width: 112px;
+  height: 66px;
+  flex-shrink: 0;
+}
+body .ecosystem-header .brand img,
+body .ecosystem-header.scrolled .brand img {
+  height: 66px;
+  width: 100%;
+  object-fit: contain;
+}
+body .ecosystem-header .desktop-nav,
+body .ecosystem-header.scrolled .desktop-nav {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+.specialties-menu {
+  position: relative;
+}
+.specialties-menu summary {
+  cursor: pointer;
+  padding: 14px 0;
+}
+.specialties-menu > div {
+  position: absolute;
+  top: 100%;
+  left: -24px;
+  width: 290px;
+  padding: 20px;
+  background: #faf8f2;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px #0002;
+}
+.specialties-menu p {
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+.specialties-menu a {
+  display: block;
+  padding: 12px 4px;
+}
+.specialties-menu small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.mobile-specialties {
+  margin: 12px 0;
+  padding: 16px;
+  background: #eeece5;
+  border-radius: 8px;
+}
+.mobile-specialties > span {
+  font-size: 12px;
+}
+.mobile-specialties a {
+  font-size: 16px;
+}
+body[data-brand="consultoria"] .hero {
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  height: 100svh;
+  min-height: 620px;
+}
+body[data-brand="consultoria"] .hero h1 {
+  font-family: var(--body);
+  font-size: clamp(46px, 5.5vw, 80px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  max-width: 760px;
+}
+body[data-brand="consultoria"] .hero-description {
+  max-width: 460px;
+  margin: 26px 0 32px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.button {
+  border-radius: 6px;
+}
+@media (max-width: 1000px) {
+  body .ecosystem-header .desktop-nav,
+  body .ecosystem-header.scrolled .desktop-nav {
+    display: none;
+  }
+  body .ecosystem-header .header-cta {
+    margin-left: auto;
+  }
+}
+@media (max-width: 600px) {
+  body .ecosystem-header,
+  body .ecosystem-header.scrolled {
+    top: 10px;
+    padding: 6px 15px;
+    min-height: 72px;
+  }
+  body .ecosystem-header .brand,
+  body .ecosystem-header.scrolled .brand,
+  body .ecosystem-header .brand img,
+  body .ecosystem-header.scrolled .brand img {
+    height: 58px;
+  }
+  body[data-brand="consultoria"] .hero {
+    min-height: 620px;
+    padding: 135px 0 80px;
+    align-items: center;
+  }
+  body[data-brand="consultoria"] .hero h1 {
+    font-size: 46px;
+  }
+  body[data-brand="consultoria"] .hero-description {
+    font-size: 17px;
+    max-width: 320px;
+  }
+  .ecosystem-header .mobile-nav {
+    top: calc(100% + 8px);
+    border-radius: 12px;
+  }
+}
