@@ -3363,8 +3363,8 @@ body[data-brand="empresarial"] .ecosystem-header .brand {
 }
 body[data-brand="empresarial"] .ecosystem-header.scrolled .brand,
 body[data-brand="empresarial"] .footer-brand .brand {
-  background: #202020;
-  padding: 8px;
+  background: transparent;
+  padding: 0;
 }
 body[data-brand="empresarial"] .footer-brand .brand {
   width: 230px;
@@ -3374,4 +3374,10 @@ body[data-brand="empresarial"] .footer-brand .brand {
 }
 .operation-bottom p {
   color: #f1eee8;
+}
+
+/* Keep white lettering legible without a rectangular logo background. */
+body[data-brand="empresarial"] .ecosystem-header.scrolled .brand img,
+body[data-brand="empresarial"] .footer-brand .brand img {
+  filter: drop-shadow(0 1px 1px #000);
 }
