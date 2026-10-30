@@ -21,7 +21,7 @@ for (const file of pages) {
   assert.equal(new Set(ids).size, ids.length, `${file}: duplicate IDs`);
   for (const m of html.matchAll(/(?:src|href|poster|data-src)="([^"]+)"/g)) {
     const url = m[1];
-    if (/^(https?:|mailto:|data:)/.test(url)) continue;
+    if (/^(https?:|mailto:|tel:|data:)/.test(url)) continue;
     if (url.startsWith("#")) {
       assert(ids.includes(url.slice(1)), `${file}: missing anchor ${url}`);
       continue;

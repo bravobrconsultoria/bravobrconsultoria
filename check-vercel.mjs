@@ -52,7 +52,7 @@ for (const page of [
   ];
   for (const link of links) {
     let path = (link[1] || link[2]).split("#")[0];
-    if (!path || /^(https?:|mailto:|data:)/.test(path)) continue;
+    if (!path || /^(https?:|mailto:|tel:|data:)/.test(path)) continue;
     path = path.replace(/^\//, "").replace(/^\.\//, "");
     if (!path) path = "index.html";
     if (["foods", "empresarial"].includes(path)) path += ".html";
