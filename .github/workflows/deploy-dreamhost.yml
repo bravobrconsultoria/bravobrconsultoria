@@ -39,6 +39,8 @@ jobs:
              app.js robots.txt sitemap.xml \
              .htaccess publish/
           cp -a assets/web assets/fonts publish/assets/
+          mkdir -p publish/assets/foods/videos
+          cp assets/foods/videos/hero-web.mp4 publish/assets/foods/videos/
 
       - name: Configurar SSH
         env:
@@ -67,15 +69,15 @@ jobs:
 
       - name: Verificar site publicado
         run: |
-          curl --fail --silent --show-error \
+          curl --fail --silent --show-error --location --max-redirs 5 \
             --retry 3 \
             https://bravobrconsultoria.com.br/ \
             -o /dev/null
 
-          curl --fail --silent --show-error \
+          curl --fail --silent --show-error --location --max-redirs 5 \
             https://bravobrconsultoria.com.br/foods \
             -o /dev/null
 
-          curl --fail --silent --show-error \
+          curl --fail --silent --show-error --location --max-redirs 5 \
             https://bravobrconsultoria.com.br/empresarial \
             -o /dev/null

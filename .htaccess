@@ -1,4 +1,7 @@
 Options -Indexes -MultiViews
+# HTML routes may share names with old deployment directories.
+# Keep mod_dir from adding a slash before the explicit route is served.
+DirectorySlash Off
 RewriteEngine On
 
 # Canonical public URLs; source HTML files stay at the project root.
@@ -7,7 +10,7 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+(foods|empresarial)\.html[\s?] [NC]
 RewriteRule ^(foods|empresarial)\.html$ /$1 [R=301,L]
 RewriteRule ^(foods|empresarial)/$ /$1 [R=301,L]
-RewriteRule ^(foods|empresarial)$ $1.html [L]
+RewriteRule ^(foods|empresarial)$ $1.html [END]
 
 # Deploy only public files listed in README.md.
 ErrorDocument 404 /404.html
