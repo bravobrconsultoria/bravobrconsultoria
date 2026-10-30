@@ -37,9 +37,9 @@ Os depoimentos originais mantêm as referências históricas à Bravo BR Foods, 
 
 ## Publicação
 
-Endereço atual: `https://bravobrconsultoria.vercel.app`.
+Endereço oficial: `https://bravobrconsultoria.com.br` (DreamHost, com integração ao GitHub).
 
-Domínio futuro: `https://bravobrconsultoria.com.br`. Na migração, atualizar canonical, Open Graph, JSON-LD, robots.txt e sitemap.xml para o domínio próprio e configurar os redirecionamentos na Vercel.
+Canonical, Open Graph, JSON-LD, robots.txt e sitemap.xml apontam para o domínio oficial. O `.htaccess` mantém as rotas no Apache da DreamHost. A configuração Vercel permanece disponível para a hospedagem alternativa.
 
 ### Vercel
 

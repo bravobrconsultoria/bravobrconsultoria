@@ -65,7 +65,7 @@ for (const file of pages) {
 for (const [route, file] of Object.entries(routes)) {
   const page = readFileSync(file, "utf8");
   assert(
-    page.includes(`href="https://bravobrconsultoria.vercel.app${route}"`),
+    page.includes(`href="https://bravobrconsultoria.com.br${route}"`),
     `${file}: canonical route`,
   );
   const caseIds = [...page.matchAll(/data-case="(\d+)"/g)].map(
@@ -98,7 +98,7 @@ for (const brand of ["consultoria", "empresarial"])
     statSync(`assets/web/${brand}-hero.mp4`).size < 3 * 1024 * 1024,
     `${brand}: hero exceeds budget`,
   );
-assert.match(html, /bravobrconsultoria.vercel.app/);
+assert.match(html, /bravobrconsultoria.com.br/);
 assert(
   statSync("assets/foods/videos/hero-web.mp4").size < 3 * 1024 * 1024,
   "Hero exceeds budget",
