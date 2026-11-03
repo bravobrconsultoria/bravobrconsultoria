@@ -36,7 +36,7 @@ jobs:
           mkdir -p publish/assets
           cp index.html foods.html empresarial.html \
              privacidade.html 404.html styles.css \
-             app.js robots.txt sitemap.xml \
+             app.js robots.txt sitemap.xml googlefa6c4a449be397ac.html \
              .htaccess publish/
           cp -a assets/web assets/fonts publish/assets/
           mkdir -p publish/assets/foods/videos
@@ -69,6 +69,11 @@ jobs:
 
       - name: Verificar site publicado
         run: |
+          curl --fail --silent --show-error \
+            https://bravobrconsultoria.com.br/googlefa6c4a449be397ac.html \
+            -o /tmp/google-verification.html
+          cmp googlefa6c4a449be397ac.html /tmp/google-verification.html
+
           curl --fail --silent --show-error --location --max-redirs 5 \
             --retry 3 \
             https://bravobrconsultoria.com.br/ \
