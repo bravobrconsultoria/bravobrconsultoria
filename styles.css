@@ -3381,3 +3381,15 @@ body[data-brand="empresarial"] .ecosystem-header.scrolled .brand img,
 body[data-brand="empresarial"] .footer-brand .brand img {
   filter: drop-shadow(0 1px 1px #000);
 }
+
+/* Commercial presentations replace the former slogan strip. */
+.brochures { padding: 32px 0; background: #fff; border-bottom: 1px solid var(--line); }
+.brochures h2 { font: 700 clamp(20px, 2vw, 26px)/1.3 var(--sans); margin: 0 0 22px; text-transform: none; }
+.brochure-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.brochure-link { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
+.brochure-link:hover { border-color: var(--red); }
+.brochure-link strong { display: block; font-size: 19px; }
+.brochure-link small { display: block; font-size: 13px; color: var(--muted); }
+.brochure-action { flex-shrink: 0; font-size: 14px; font-weight: 700; color: #a92b1b; }
+@media (max-width: 900px) { .brochure-links { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .brochure-link { align-items: flex-start; flex-direction: column; gap: 12px; padding: 18px; } }
