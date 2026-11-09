@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "check": "node generate-section-pages.mjs && node --check app.js && node --check server.mjs && node check.mjs && node check-vercel.mjs && node check-section-pages.mjs",
+    "check": "node generate-section-pages.mjs && node --check app.js && node --check server.mjs && node check.mjs && node check-vercel.mjs && node check-section-pages.mjs && node --check assets/web/cookie-consent.js && node check-consent.mjs",
     "build": "node generate-section-pages.mjs"
   },
   "engines": {
