@@ -33,16 +33,20 @@
   const panel = document.createElement('section');
   panel.className = 'cookie-panel';
   panel.setAttribute('aria-label', 'Preferências de cookies');
-  panel.innerHTML = `<h2>Sua privacidade importa</h2><p>Com sua autorização, usamos ferramentas do Google para medir visitas e campanhas e apoiar publicidade. Você pode recusar os cookies opcionais e continuar navegando normalmente.</p><p><a href="/privacidade.html">Política de Privacidade</a> · Altere sua escolha a qualquer momento em “Cookies”.</p><div class="cookie-actions"><button type="button" data-cookie="rejected">Recusar opcionais</button><button type="button" data-cookie="accepted">Aceitar opcionais</button></div><p class="cookie-status" role="status"></p>`;
+  panel.innerHTML = `<p>Usamos cookies opcionais para análise e publicidade. <a href="/privacidade.html">Política de Privacidade</a>.</p><div class="cookie-actions"><button type="button" data-cookie="rejected">Recusar</button><button type="button" data-cookie="accepted">Aceitar</button></div>`;
   const reopen = document.createElement('button');
-  reopen.type = 'button'; reopen.className = 'cookie-preferences'; reopen.textContent = 'Cookies';
+  reopen.type = 'button'; reopen.className = 'cookie-preferences'; reopen.textContent = 'Preferências de cookies';
   reopen.setAttribute('aria-label', 'Alterar preferências de cookies');
-  document.body.append(panel, reopen);
+  document.body.append(panel);
+  const footer = document.querySelector(".footer-bottom") || document.querySelector("main") || document.body;
+  footer.append(reopen);
+  let openedFromFooter = false;
   function show(open, focus = false) {
-    panel.hidden = !open; reopen.hidden = open;
-    if (focus) (open ? panel.querySelector('button') : reopen).focus();
+    panel.hidden = !open;
+    if (focus && open) panel.querySelector('button').focus({ preventScroll: true });
+    if (focus && !open && openedFromFooter) reopen.focus({ preventScroll: true });
   }
-  reopen.addEventListener('click', () => show(true, true));
+  reopen.addEventListener('click', () => { openedFromFooter = true; show(true, true); });
   panel.querySelectorAll('[data-cookie]').forEach(button => button.addEventListener('click', () => {
     const choice = button.dataset.cookie;
     const previous = loaded;

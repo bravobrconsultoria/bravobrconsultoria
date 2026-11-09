@@ -6,7 +6,7 @@ function setup(saved,broken=false){
  const listeners={},buttons=['rejected','accepted'].map(choice=>({dataset:{cookie:choice},addEventListener:(event,fn)=>listeners[choice]=fn,focus(){}}));
  let stored=saved,requests=0,reloads=0;
  const panel={setAttribute(){},querySelectorAll:()=>buttons,querySelector:()=>buttons[0]};
- const document={cookie:'',head:{append:()=>requests++},body:{append(){}},createElement:tag=>tag==='section'?panel:tag==='button'?{setAttribute(){},addEventListener(){},focus(){}}:{}};
+ const document={querySelector:()=>({append(){}}),cookie:'',head:{append:()=>requests++},body:{append(){}},createElement:tag=>tag==='section'?panel:tag==='button'?{setAttribute(){},addEventListener(){},focus(){}}:{}};
  const window={addEventListener(){},alert(){}};
  runInNewContext(code,{window,document,location:{hostname:'bravobrconsultoria.com.br',pathname:'/foods/cardapio',reload:()=>reloads++},localStorage:{getItem:()=>stored,setItem:(key,value)=>{if(broken)throw Error();stored=value;}},Date});
  return {click:choice=>listeners[choice](),requests:()=>requests,reloads:()=>reloads,stored:()=>JSON.parse(stored||'null')};
