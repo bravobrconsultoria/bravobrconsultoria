@@ -2,28 +2,213 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "builds": [
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "styles.css", "use": "@vercel/static" },
-    { "src": "app.js", "use": "@vercel/static" },
-    { "src": "robots.txt", "use": "@vercel/static" },
-    { "src": "sitemap.xml", "use": "@vercel/static" },
-    { "src": "assets/web/**", "use": "@vercel/static" },
-    { "src": "assets/fonts/*.woff2", "use": "@vercel/static" },
-    { "src": "assets/fonts/OFL-*.txt", "use": "@vercel/static" },
-    { "src": "assets/foods/videos/hero-web.mp4", "use": "@vercel/static" }
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "styles.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "app.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "robots.txt",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/web/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/fonts/*.woff2",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/fonts/OFL-*.txt",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/foods/videos/hero-web.mp4",
+      "use": "@vercel/static"
+    }
   ],
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/foods.html", "destination": "/foods", "permanent": true },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/foods.html",
+      "destination": "/foods",
+      "permanent": true
+    },
     {
       "source": "/empresarial.html",
       "destination": "/empresarial",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-sobre.html",
+      "destination": "/sobre",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-metodo.html",
+      "destination": "/metodo",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-solucoes.html",
+      "destination": "/solucoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-cases.html",
+      "destination": "/cases",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-contato.html",
+      "destination": "/contato",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-visao.html",
+      "destination": "/visao",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-especializacoes.html",
+      "destination": "/especializacoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-cardapio.html",
+      "destination": "/foods/cardapio",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-delivery.html",
+      "destination": "/foods/delivery",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-desafios.html",
+      "destination": "/foods/desafios",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-cases.html",
+      "destination": "/foods/cases",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-sobre.html",
+      "destination": "/foods/sobre",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-jornada.html",
+      "destination": "/empresarial/jornada",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-desafios.html",
+      "destination": "/empresarial/desafios",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-cases.html",
+      "destination": "/empresarial/cases",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-sobre.html",
+      "destination": "/empresarial/sobre",
       "permanent": true
     }
   ],
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/foods", "destination": "/foods.html" },
-    { "source": "/empresarial", "destination": "/empresarial.html" }
+    {
+      "source": "/foods",
+      "destination": "/foods.html"
+    },
+    {
+      "source": "/empresarial",
+      "destination": "/empresarial.html"
+    },
+    {
+      "source": "/sobre",
+      "destination": "/section-index-sobre.html"
+    },
+    {
+      "source": "/metodo",
+      "destination": "/section-index-metodo.html"
+    },
+    {
+      "source": "/solucoes",
+      "destination": "/section-index-solucoes.html"
+    },
+    {
+      "source": "/cases",
+      "destination": "/section-index-cases.html"
+    },
+    {
+      "source": "/contato",
+      "destination": "/section-index-contato.html"
+    },
+    {
+      "source": "/visao",
+      "destination": "/section-index-visao.html"
+    },
+    {
+      "source": "/especializacoes",
+      "destination": "/section-index-especializacoes.html"
+    },
+    {
+      "source": "/foods/cardapio",
+      "destination": "/section-foods-cardapio.html"
+    },
+    {
+      "source": "/foods/delivery",
+      "destination": "/section-foods-delivery.html"
+    },
+    {
+      "source": "/foods/desafios",
+      "destination": "/section-foods-desafios.html"
+    },
+    {
+      "source": "/foods/cases",
+      "destination": "/section-foods-cases.html"
+    },
+    {
+      "source": "/foods/sobre",
+      "destination": "/section-foods-sobre.html"
+    },
+    {
+      "source": "/empresarial/jornada",
+      "destination": "/section-empresarial-jornada.html"
+    },
+    {
+      "source": "/empresarial/desafios",
+      "destination": "/section-empresarial-desafios.html"
+    },
+    {
+      "source": "/empresarial/cases",
+      "destination": "/section-empresarial-cases.html"
+    },
+    {
+      "source": "/empresarial/sobre",
+      "destination": "/section-empresarial-sobre.html"
+    }
   ]
 }

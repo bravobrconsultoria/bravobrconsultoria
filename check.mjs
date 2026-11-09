@@ -1,6 +1,8 @@
+import { sections } from "./generate-section-pages.mjs";
 import { readFileSync, existsSync, statSync } from "node:fs";
 import assert from "node:assert/strict";
 const pages = [
+  ...sections.map(page => page.file),
   "index.html",
   "foods.html",
   "empresarial.html",
@@ -8,6 +10,7 @@ const pages = [
   "404.html",
 ];
 const routes = {
+  ...Object.fromEntries(sections.map(page => [page.route, page.file])),
   "/": "index.html",
   "/foods": "foods.html",
   "/empresarial": "empresarial.html",
@@ -72,9 +75,9 @@ for (const [route, file] of Object.entries(routes)) {
     (match) => match[1],
   );
   const expected =
-    route === "/foods"
+    route.startsWith("/foods")
       ? ["1"]
-      : route === "/empresarial"
+      : route.startsWith("/empresarial")
         ? ["0", "2", "3"]
         : ["0", "1", "2", "3"];
   assert.deepEqual(caseIds, expected, `${file}: editorial case selection`);

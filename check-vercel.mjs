@@ -1,3 +1,4 @@
+import { sections } from "./generate-section-pages.mjs";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 
@@ -32,6 +33,7 @@ for (const path of [
 ])
   assert(!published(path), `${path} must not be deployed`);
 for (const page of [
+  ...sections.map(page => page.file),
   "index.html",
   "foods.html",
   "empresarial.html",

@@ -38,6 +38,7 @@ jobs:
              privacidade.html 404.html styles.css \
              app.js robots.txt sitemap.xml googlefa6c4a449be397ac.html \
              .htaccess publish/
+          cp section-*.html publish/
           cp -a assets/web assets/fonts publish/assets/
           mkdir -p publish/assets/foods/videos
           cp assets/foods/videos/hero-web.mp4 publish/assets/foods/videos/

@@ -1,3 +1,4 @@
+import { sections } from "./generate-section-pages.mjs";
 import { createServer } from "node:http";
 import { createReadStream, statSync } from "node:fs";
 import { resolve, extname, sep } from "node:path";
@@ -32,11 +33,13 @@ createServer((req, res) => {
     return;
   }
   const routes = {
+    ...Object.fromEntries(sections.map(p => [p.route, "/" + p.file])),
     "/": "/index.html",
     "/foods": "/foods.html",
     "/empresarial": "/empresarial.html",
   };
   const canonical = {
+    ...Object.fromEntries(sections.flatMap(p => [["/" + p.file, p.route], [p.route + "/", p.route]])),
     "/index.html": "/",
     "/foods.html": "/foods",
     "/foods/": "/foods",
@@ -53,6 +56,7 @@ createServer((req, res) => {
     "." + (pathname === "/" ? "/index.html" : pathname),
   );
   const allowed = [
+    ...sections.map(p => p.file),
     "index.html",
     "foods.html",
     "empresarial.html",
