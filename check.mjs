@@ -32,7 +32,7 @@ for (const file of pages) {
     const [pathname, anchor] = url.split("#");
     const path =
       routes[pathname] ||
-      (pathname === "./" ? "index.html" : pathname.replace(/^\//, ""));
+      (pathname === "./" ? "index.html" : pathname.split("?")[0].replace(/^\//, ""));
     assert(existsSync(path), `${file}: missing ${path}`);
     assert(statSync(path).size > 0, `${file}: empty ${path}`);
     if (anchor)
