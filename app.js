@@ -10,7 +10,7 @@ const currentBrand =
 const whatsapp =
   "https://wa.me/5519981198188?text=" +
   encodeURIComponent(
-    `Olá! Conheci a ${currentBrand} pelo site e gostaria de entender como vocês podem ajudar meu negócio.`,
+    `Olá! Vim pelo site da ${currentBrand} e gostaria de entender como vocês podem ajudar meu negócio.`,
   );
 $$("[data-whatsapp]").forEach((a) => (a.href = whatsapp));
 const header = $("#header"),
