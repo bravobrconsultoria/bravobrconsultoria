@@ -11,15 +11,16 @@ for(const p of sections){
  assert.equal(html,generate(p),p.route+': generated file current');
  assert.equal((html.match(/rel="canonical"/g)||[]).length,1);
  const url='https://bravobrconsultoria.com.br'+p.route;
- assert(html.includes(`href="${url}"`));
+ const canonicalRoute = p.source === 'index.html' ? '/' : '/' + p.source.replace('.html', '');
+ assert(html.includes(`href="https://bravobrconsultoria.com.br${canonicalRoute}"`));
  const data=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1]));
  assert.equal(data.find(d=>d['@type']==='WebPage').url,url);
  assert(config.rewrites.some(r=>r.source===p.route&&r.destination==='/'+p.file));
  assert(ht.includes(`RewriteRule ^${p.route.slice(1)}$ ${p.file} [END]`));
- assert(sitemap.includes(`<loc>${url}</loc><lastmod>2026-11-09</lastmod>`));
+ assert(!sitemap.includes(`<loc>${url}</loc>`));
  assert(html.includes(`document.getElementById('${p.id}')`));
 }
-console.log('PASS: 16 section routes, identical bodies, self canonicals, JSON-LD, sitemap and scroll targets.');
+console.log('PASS: 16 section routes, identical bodies, parent canonicals, JSON-LD, sitemap and scroll targets.');
 import {runInNewContext} from 'node:vm';
 for (const p of sections) {
  const html=readFileSync(p.file,'utf8');

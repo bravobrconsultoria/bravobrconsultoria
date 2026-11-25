@@ -24,12 +24,13 @@ export function generate(page) {
  assert(html.includes(`id="${page.id}"`), `Missing section ${page.route}`);
  const end=html.indexOf('</head>');
  let head=html.slice(0,end);
+ const canonicalRoute = page.source === 'index.html' ? '/' : '/' + page.source.replace('.html', '');
  const title=`${page.title} | ${page.source==='foods.html'?'Bravo BR Foods':page.source==='empresarial.html'?'Bravo BR Empresarial':'Bravo BR Consultoria'}`;
  head=head.replace(/<title>[\s\S]*?<\/title>/,`<title>${title}</title>`);
  for(const [name,value] of Object.entries({'description':page.description,'og:title':title,'og:description':page.description,'og:url':origin+page.route,'twitter:title':title,'twitter:description':page.description})) {
   head=head.replace(new RegExp(`(<meta\\s+(?:name|property)="${name}"\\s+content=")[^"]*("\\s*\\/>)`),`$1${value}$2`);
  }
- head=head.replace(/(<link\s+rel="canonical"\s+href=")[^"]*("\s*\/>)/,`$1${origin+page.route}$2`);
+ head=head.replace(/(<link\s+rel="canonical"\s+href=")[^"]*("\s*\/>)/,`$1${origin+canonicalRoute}$2`);
  head=head.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,(all,open,text,close)=>{
   const data=JSON.parse(text); if(data['@type']!=='WebPage')return all;
   data.name=title;data.url=origin+page.route;data.description=page.description;
