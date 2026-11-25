@@ -77,5 +77,95 @@ RewriteRule ^section-empresarial-sobre\.html$ /empresarial/sobre [R=301,L]
 RewriteRule ^empresarial/sobre/$ /empresarial/sobre [R=301,L]
 RewriteRule ^empresarial/sobre$ section-empresarial-sobre.html [END]
 
+RewriteCond %{THE_REQUEST} \s/+section-index-apresentacoes\.html[\s?] [NC]
+RewriteRule ^section-index-apresentacoes\.html$ /apresentacoes [R=301,L]
+RewriteRule ^apresentacoes/$ /apresentacoes [R=301,L]
+RewriteRule ^apresentacoes$ section-index-apresentacoes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-index-marketing\.html[\s?] [NC]
+RewriteRule ^section-index-marketing\.html$ /marketing [R=301,L]
+RewriteRule ^marketing/$ /marketing [R=301,L]
+RewriteRule ^marketing$ section-index-marketing.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-index-tecnologia\.html[\s?] [NC]
+RewriteRule ^section-index-tecnologia\.html$ /tecnologia [R=301,L]
+RewriteRule ^tecnologia/$ /tecnologia [R=301,L]
+RewriteRule ^tecnologia$ section-index-tecnologia.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-index-clientes\.html[\s?] [NC]
+RewriteRule ^section-index-clientes\.html$ /clientes [R=301,L]
+RewriteRule ^clientes/$ /clientes [R=301,L]
+RewriteRule ^clientes$ section-index-clientes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-index-depoimentos\.html[\s?] [NC]
+RewriteRule ^section-index-depoimentos\.html$ /depoimentos [R=301,L]
+RewriteRule ^depoimentos/$ /depoimentos [R=301,L]
+RewriteRule ^depoimentos$ section-index-depoimentos.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-apresentacoes\.html[\s?] [NC]
+RewriteRule ^section-foods-apresentacoes\.html$ /foods/apresentacoes [R=301,L]
+RewriteRule ^foods/apresentacoes/$ /foods/apresentacoes [R=301,L]
+RewriteRule ^foods/apresentacoes$ section-foods-apresentacoes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-solucoes\.html[\s?] [NC]
+RewriteRule ^section-foods-solucoes\.html$ /foods/solucoes [R=301,L]
+RewriteRule ^foods/solucoes/$ /foods/solucoes [R=301,L]
+RewriteRule ^foods/solucoes$ section-foods-solucoes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-marketing\.html[\s?] [NC]
+RewriteRule ^section-foods-marketing\.html$ /foods/marketing [R=301,L]
+RewriteRule ^foods/marketing/$ /foods/marketing [R=301,L]
+RewriteRule ^foods/marketing$ section-foods-marketing.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-tecnologia\.html[\s?] [NC]
+RewriteRule ^section-foods-tecnologia\.html$ /foods/tecnologia [R=301,L]
+RewriteRule ^foods/tecnologia/$ /foods/tecnologia [R=301,L]
+RewriteRule ^foods/tecnologia$ section-foods-tecnologia.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-operacao\.html[\s?] [NC]
+RewriteRule ^section-foods-operacao\.html$ /foods/operacao [R=301,L]
+RewriteRule ^foods/operacao/$ /foods/operacao [R=301,L]
+RewriteRule ^foods/operacao$ section-foods-operacao.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-clientes\.html[\s?] [NC]
+RewriteRule ^section-foods-clientes\.html$ /foods/clientes [R=301,L]
+RewriteRule ^foods/clientes/$ /foods/clientes [R=301,L]
+RewriteRule ^foods/clientes$ section-foods-clientes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-foods-contato\.html[\s?] [NC]
+RewriteRule ^section-foods-contato\.html$ /foods/contato [R=301,L]
+RewriteRule ^foods/contato/$ /foods/contato [R=301,L]
+RewriteRule ^foods/contato$ section-foods-contato.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-empresarial-apresentacoes\.html[\s?] [NC]
+RewriteRule ^section-empresarial-apresentacoes\.html$ /empresarial/apresentacoes [R=301,L]
+RewriteRule ^empresarial/apresentacoes/$ /empresarial/apresentacoes [R=301,L]
+RewriteRule ^empresarial/apresentacoes$ section-empresarial-apresentacoes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-empresarial-solucoes\.html[\s?] [NC]
+RewriteRule ^section-empresarial-solucoes\.html$ /empresarial/solucoes [R=301,L]
+RewriteRule ^empresarial/solucoes/$ /empresarial/solucoes [R=301,L]
+RewriteRule ^empresarial/solucoes$ section-empresarial-solucoes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-empresarial-marketing\.html[\s?] [NC]
+RewriteRule ^section-empresarial-marketing\.html$ /empresarial/marketing [R=301,L]
+RewriteRule ^empresarial/marketing/$ /empresarial/marketing [R=301,L]
+RewriteRule ^empresarial/marketing$ section-empresarial-marketing.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-empresarial-tecnologia\.html[\s?] [NC]
+RewriteRule ^section-empresarial-tecnologia\.html$ /empresarial/tecnologia [R=301,L]
+RewriteRule ^empresarial/tecnologia/$ /empresarial/tecnologia [R=301,L]
+RewriteRule ^empresarial/tecnologia$ section-empresarial-tecnologia.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-empresarial-clientes\.html[\s?] [NC]
+RewriteRule ^section-empresarial-clientes\.html$ /empresarial/clientes [R=301,L]
+RewriteRule ^empresarial/clientes/$ /empresarial/clientes [R=301,L]
+RewriteRule ^empresarial/clientes$ section-empresarial-clientes.html [END]
+
+RewriteCond %{THE_REQUEST} \s/+section-empresarial-contato\.html[\s?] [NC]
+RewriteRule ^section-empresarial-contato\.html$ /empresarial/contato [R=301,L]
+RewriteRule ^empresarial/contato/$ /empresarial/contato [R=301,L]
+RewriteRule ^empresarial/contato$ section-empresarial-contato.html [END]
+
 # Deploy only public files listed in README.md.
 ErrorDocument 404 /404.html

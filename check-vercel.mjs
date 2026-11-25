@@ -58,6 +58,7 @@ for (const page of [
     path = path.split("?")[0].replace(/^\//, "").replace(/^\.\//, "");
     if (!path) path = "index.html";
     if (["foods", "empresarial"].includes(path)) path += ".html";
+    path = sections.find(p => p.route === "/" + path)?.file || path;
     assert(
       existsSync(path) && published(path),
       `${page}: unpublished resource ${path}`,

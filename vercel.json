@@ -134,6 +134,96 @@
       "source": "/section-empresarial-sobre.html",
       "destination": "/empresarial/sobre",
       "permanent": true
+    },
+    {
+      "source": "/section-index-apresentacoes.html",
+      "destination": "/apresentacoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-marketing.html",
+      "destination": "/marketing",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-tecnologia.html",
+      "destination": "/tecnologia",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-clientes.html",
+      "destination": "/clientes",
+      "permanent": true
+    },
+    {
+      "source": "/section-index-depoimentos.html",
+      "destination": "/depoimentos",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-apresentacoes.html",
+      "destination": "/foods/apresentacoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-solucoes.html",
+      "destination": "/foods/solucoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-marketing.html",
+      "destination": "/foods/marketing",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-tecnologia.html",
+      "destination": "/foods/tecnologia",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-operacao.html",
+      "destination": "/foods/operacao",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-clientes.html",
+      "destination": "/foods/clientes",
+      "permanent": true
+    },
+    {
+      "source": "/section-foods-contato.html",
+      "destination": "/foods/contato",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-apresentacoes.html",
+      "destination": "/empresarial/apresentacoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-solucoes.html",
+      "destination": "/empresarial/solucoes",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-marketing.html",
+      "destination": "/empresarial/marketing",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-tecnologia.html",
+      "destination": "/empresarial/tecnologia",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-clientes.html",
+      "destination": "/empresarial/clientes",
+      "permanent": true
+    },
+    {
+      "source": "/section-empresarial-contato.html",
+      "destination": "/empresarial/contato",
+      "permanent": true
     }
   ],
   "trailingSlash": false,
@@ -209,6 +299,78 @@
     {
       "source": "/empresarial/sobre",
       "destination": "/section-empresarial-sobre.html"
+    },
+    {
+      "source": "/apresentacoes",
+      "destination": "/section-index-apresentacoes.html"
+    },
+    {
+      "source": "/marketing",
+      "destination": "/section-index-marketing.html"
+    },
+    {
+      "source": "/tecnologia",
+      "destination": "/section-index-tecnologia.html"
+    },
+    {
+      "source": "/clientes",
+      "destination": "/section-index-clientes.html"
+    },
+    {
+      "source": "/depoimentos",
+      "destination": "/section-index-depoimentos.html"
+    },
+    {
+      "source": "/foods/apresentacoes",
+      "destination": "/section-foods-apresentacoes.html"
+    },
+    {
+      "source": "/foods/solucoes",
+      "destination": "/section-foods-solucoes.html"
+    },
+    {
+      "source": "/foods/marketing",
+      "destination": "/section-foods-marketing.html"
+    },
+    {
+      "source": "/foods/tecnologia",
+      "destination": "/section-foods-tecnologia.html"
+    },
+    {
+      "source": "/foods/operacao",
+      "destination": "/section-foods-operacao.html"
+    },
+    {
+      "source": "/foods/clientes",
+      "destination": "/section-foods-clientes.html"
+    },
+    {
+      "source": "/foods/contato",
+      "destination": "/section-foods-contato.html"
+    },
+    {
+      "source": "/empresarial/apresentacoes",
+      "destination": "/section-empresarial-apresentacoes.html"
+    },
+    {
+      "source": "/empresarial/solucoes",
+      "destination": "/section-empresarial-solucoes.html"
+    },
+    {
+      "source": "/empresarial/marketing",
+      "destination": "/section-empresarial-marketing.html"
+    },
+    {
+      "source": "/empresarial/tecnologia",
+      "destination": "/section-empresarial-tecnologia.html"
+    },
+    {
+      "source": "/empresarial/clientes",
+      "destination": "/section-empresarial-clientes.html"
+    },
+    {
+      "source": "/empresarial/contato",
+      "destination": "/section-empresarial-contato.html"
     }
   ]
 }

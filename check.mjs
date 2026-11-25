@@ -68,7 +68,7 @@ for (const file of pages) {
 for (const [route, file] of Object.entries(routes)) {
   const page = readFileSync(file, "utf8");
   const section = sections.find(p => p.route === route);
-  const canonicalRoute = section ? (section.source === "index.html" ? "/" : "/" + section.source.replace(".html", "")) : route;
+  const canonicalRoute = route;
   assert(
     page.includes(`href="https://bravobrconsultoria.com.br${canonicalRoute}"`),
     `${file}: canonical route`,
@@ -76,7 +76,7 @@ for (const [route, file] of Object.entries(routes)) {
   const caseIds = [...page.matchAll(/data-case="(\d+)"/g)].map(
     (match) => match[1],
   );
-  const expected =
+  const expected = section && section.id !== "cases" ? [] :
     route.startsWith("/foods")
       ? ["1"]
       : route.startsWith("/empresarial")
